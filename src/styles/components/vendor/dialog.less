@@ -1,0 +1,191 @@
+@import "../../common/variables";
+@import "../../common/mixins";
+
+.mask-black-dialog {
+  .mask(rgba(0, 0, 0, .5), @base-zindex * 2000);
+}
+
+.mask-white-dialog {
+  .mask(rgba(0, 0, 0, 0), @base-zindex * 2000);
+}
+
+.mask-white-dialog-2 {
+  .mask2(rgba(0, 0, 0, 0), @base-zindex * 2000);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Confirm & Alert =================
+.m-confirm {
+  width: 6rem;
+  background-color: #fff;
+  border-radius: .24rem;
+  font-size: 15px;
+  animation: zoomIn .15s ease forwards;
+}
+
+.m-alert {
+  animation: zoomIn .15s ease forwards;
+  .confirm-bd {
+    text-align: center;
+    padding: .42rem 20px;
+  }
+}
+
+.confirm-hd {
+  text-align: left;
+  padding: 15px 20px 5px;
+  .confirm-title {
+    font-weight: normal;
+    color: #444;
+    word-break: break-all;
+  }
+}
+
+.confirm-bd {
+  text-align: center;
+  padding: .46rem 20px .42rem;
+  font-size: .36rem;
+  color: #333;
+  line-height: 20px;
+  word-break: break-all;
+}
+
+.confirm-ft {
+  position: relative;
+  line-height: 1.04rem;
+  display: flex;
+  font-size: .32rem;
+  color: @bule;
+  &:after {
+    .top-line(@line-color);
+  }
+  > a {
+    position: relative;
+    text-align: center;
+    display: block;
+    flex: 1;
+    padding: 0 2px;
+    &:not(:last-child):after {
+      .right-line(@line-color);
+    }
+    &.confirm-btn.default {
+      color: #999;
+    }
+    &.confirm-btn.primary {
+      color: @bule;
+    }
+  }
+}
+
+// Toast =================
+.m-toast {
+  min-width: 2.4rem;
+  max-width: 80%;
+  padding-top: .3rem;
+  background: rgba(0, 0, 0, .6);
+  text-align: center;
+  border-radius: .24rem;
+  color: #FFF;
+  animation: zoomIn .06s ease forwards;
+  &.toast-none-icon {
+    padding-top: .3rem;
+    border-radius: .12rem;
+    .toast-content {
+      padding: 0 .4rem .3rem .4rem;
+      font-size: .32rem; line-height: .32rem;
+    }
+  }
+}
+
+.toast-content {
+  font-size: .3rem;
+  padding: 0 15px .38rem 15px;
+  line-height: .3rem;
+  word-break: break-all;
+}
+
+.toast-success-icon, .toast-error-icon, .toast-loading-icon {
+  display: block;
+  margin-bottom: .1rem;
+  &:after {
+    display: inline-block;
+    content: '';
+  }
+}
+
+.toast-success-icon:after {
+  width: .46rem; height: .46rem;
+  background: url(../../../assets/i/i-success.png) no-repeat center center;
+  background-size: contain;
+}
+
+.toast-error-icon:after {
+  width: .46rem; height: .46rem;
+  background: url(../../../assets/i/i-warn.png) no-repeat center center;
+  background-size: contain;
+}
+
+.toast-loading-icon:after {
+  width: .46rem; height: .46rem;
+  background: url(../../../assets/i/loading.gif) no-repeat center center;
+  background-size: contain;
+}
+
+// Notify =================
+@keyframes notify-downin {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes notify-upout {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+  }
+}
+
+.m-notify {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(40, 40, 40, .8);
+  line-height: .28rem;
+  font-size: .26rem;
+  color: #FFF;
+  padding: .3rem .24rem;
+  opacity: 0;
+  animation: notify-downin .2s linear forwards;
+  word-break: break-all;
+  text-align: center;
+  z-index: @base-zindex * 2000;
+  &.notify-out {
+    opacity: 1;
+    animation: notify-upout .15s linear forwards;
+  }
+}

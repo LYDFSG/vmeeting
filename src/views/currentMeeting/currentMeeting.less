@@ -1,0 +1,686 @@
+// 移动端隐藏滚动条
+::-webkit-scrollbar{
+  width:0px;display: none
+}
+
+.ios{
+     .header_bottom{
+      height: 1.28rem;
+      // width: 100%;
+     }
+     // .currentMeeting_main{
+     //  height: 10.72rem;
+     // }
+     .left_top_h{
+       top:1.28rem!important;
+     }
+    }
+    
+.header_bottom{
+      height: 0.88rem;
+      min-width: 19.2rem;
+      // width: 100%;
+     }
+.currentMeeting_main{
+  height: 10.03rem;
+  overflow:hidde;
+  .current_main{
+     display: flex;
+     height: 10rem;
+     width: 19.2rem;
+     .main_left{
+       width: 5rem;
+        height: 10.03rem;
+       overflow: scroll;
+       -webkit-overflow-scrolling: touch;
+       background: none;
+       position: relative;
+       background:#1e2832;
+       border-bottom: 0.01rem solid #1e2832;
+       .left_top,.left_top_h{
+          height: 1.04rem;
+          width: 100%;
+          background: #222d39;
+          text-align: center;
+          line-height: 1.04rem;
+          color: #fff;
+          display: flex;
+          justify-content:center;
+          align-items:center;
+          
+          .current_logo{
+            display: inline-block;
+            width: 0.32rem;
+            height: 0.32rem;
+            background: url("../../assets/i/currentMeetoing.png") no-repeat center center;
+            background-size: contain;
+            margin-right: 0.2rem;
+          }
+          .text{
+            font-size: 0.28rem;
+            height: 0.28rem;
+            line-height: 0.32rem;
+          }
+       }
+       .left_top_h{
+          width: 4.95rem;
+          position: fixed;
+          top: 0.88rem;
+          left: 0;
+          height: 1.04rem;
+          background: #222d39;
+          text-align: center;
+          line-height: 1.04rem;
+          color: #fff;
+          z-index: 99;
+       }
+       .meeting_list{
+         height: 8.99rem;
+         width: 5rem;
+         overflow: scroll;
+         background:#1e2832;
+         position: absolute;
+         -webkit-overflow-scrolling: touch;
+         left: 0;
+         top: 1.04rem;
+         .defaultTips{
+          font-size: 0.24rem;
+          height: 1.04rem;
+          line-height: 1.04rem;
+          color: #515c68;
+         }
+         .item{
+             height: 1.9rem;
+             width: 100%;
+             background:#1e2832;
+             padding: 0.3rem 0;
+              box-sizing: border-box;
+              position: relative;
+              
+             div{
+              height: 0.44rem;
+              width: 100%;
+              line-height: 0.44rem;
+              color: #979fa7;
+              font-size: 0.24rem;
+              position: relative;
+              padding-left: 0.86rem;
+              box-sizing: border-box;
+              text-align: left;
+              .meet_statu{
+                position: absolute;
+                right: 0.28rem;
+                top: 50%;
+                transform:translate(0,-50%);
+                display: inline-block;
+                width: 0.86rem;
+                height: 0.36rem;
+                border-radius: 0.05rem;
+                background: #64bc4d;
+                color: #fff;
+                text-align: center;
+                line-height: 0.36rem;
+                font-size: 0.2rem;
+              }
+             }
+             .icon_status{
+                position: absolute;
+                top: 0.32rem;
+                left: 0.28rem;
+                width: 0.38rem;
+                height: 0.38rem;
+                padding-left: 0;
+                background: url("../../assets/i/notBegin.png") no-repeat center center;
+                background-size: contain;
+                z-index: 2;
+              }
+              .icon_line{
+                width: 0.02rem;
+                background: #3c4752;
+                height: 1.9rem;
+                position: absolute;
+                top: 0;
+                left: 0.46rem;
+                padding-left: 0;
+                z-index: 1;
+              }
+              .ed_line{
+                width: 0.02rem;
+                background: #1e2832;
+                height: 0.32rem;
+                position: absolute;
+                top: 0;
+                left: 0.46rem;
+                padding-left: 0;
+                z-index: 1;
+              }
+         }
+         .active{
+                background: #1a222b!important;
+              div{
+                 color: #fff;
+                .meet_statu{
+                   background:#e98741;
+                }
+              }
+              .icon_status{
+                 background: url("../../assets/i/ing.png") no-repeat center center;
+                 background-size: contain;
+              }
+           }
+           .item{
+                background: #1e2832;
+              div{
+                .gameOverStatu{
+                   background:#56616b;
+                }
+              }
+              .gameOver{
+                 background: url("../../assets/i/ed.png") no-repeat center center;
+                 background-size: contain;
+              }
+           }
+       }
+     }
+     .main_right{
+       // width: 13.2rem;
+       width: 100%;
+        height: 10.03rem;
+       overflow: scroll;
+       -webkit-overflow-scrolling: touch;
+       box-sizing: border-box;
+       flex:1;
+       border: 0.2rem solid #ecf2f4;
+       border-bottom: none;
+       padding:0.26rem 0.4rem 0.4rem 0.4rem;
+       position: relative;
+       .scanCode{
+        position: absolute;
+        right: 0rem;
+        top:0.14rem;
+        width:2.44rem;
+        height: 2.44rem;
+        .scanCode_pic{
+          width:2.44rem;
+          height:2.44rem;
+          background: #f5f5f5;
+          background:url("../../assets/i/QRCode.png") no-repeat center center;
+          background-size: contain;
+        }
+        .scanCode_tip{
+           color: #1c242d;
+           font-size: 0.36rem;
+           margin: 0.16rem 0 0.16rem 0;
+           height: 0.36rem;
+           line-height: 0.36rem;
+        }
+        .scanCode_time{
+          color: #8e979d;
+           font-size: 0.29rem;
+           height: 0.29rem;
+           line-height: 0.29rem;
+        }
+       }
+       .meet-mainInfo{
+          width: 100%;
+         
+          box-sizing: border-box;
+          position: relative;
+           .title{
+               width: 100%;
+               font-size: 1.24rem;
+               color: #2f3a47;
+               text-align: left;
+               // height: 1.52rem;
+               line-height: 1.52rem;
+               margin: 0.14rem 0;
+               overflow: hidden;
+               div{
+                 width: 9.76rem;
+                 font-size: 1.24rem;
+                 color: #2f3a47;
+                 text-align: left;
+                 // height: 100%;
+                 line-height: 1.52rem;
+                 word-wrap: break-word;
+                 word-break: normal;
+               }
+           }
+           .time{
+             padding-left: 0.76rem;
+               width: 100%;
+               height: 0.82rem;
+               line-height: 0.82rem;
+               font-size: 0.54rem;
+               color: #8e979d;
+               text-align: left;
+               position: relative;
+               box-sizing: border-box;
+                span{
+                  position: absolute;
+                  right: 5.6rem;
+                  top: 50%;
+                  transform:translate(0,-50%);
+                  display: inline-block;
+                  width: 1.24rem;
+                  height: 0.52rem;
+                  border-radius: 0.05rem;
+                  background: #64bc4d;
+                  color: #fff;
+                  text-align: center;
+                  line-height:0.52rem;
+                  font-size: 0.32rem;
+                  margin-left: 0.4rem;
+                }
+                &:after{
+                  content: "";
+                  width: 0.47rem;
+                  height: 0.47rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 0rem;
+                  transform: translate(0,-50%);
+                  background:url("../../assets/i/time.png") no-repeat center center;
+                  background-size: contain;
+                }
+           }
+           .people{
+             padding-left: 0.76rem;
+               width: 100%;
+               height: 0.82rem;
+               line-height: 0.82rem;
+               font-size: 0.54rem;
+               color: #8e979d;
+               text-align: left;
+               position: relative;
+               box-sizing: border-box;
+               &:after{
+                  content: "";
+                  width: 0.47rem;
+                  height: 0.57rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 0rem;
+                  transform: translate(0,-50%);
+                  background:url("../../assets/i/orderpeople.png") no-repeat center center;
+                  background-size: contain;
+                }
+           }
+           .meetTips{
+            height: 0.5rem;
+            color:#f05050;
+            font-size: 0.3rem;
+            line-height: 0.5rem;
+            text-align: left;
+            padding-left: 1.2rem;
+            box-sizing: border-box;
+            position: relative;
+            &:after{
+                  content: "";
+                  width: 0.27rem;
+                  height: 0.27rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 0.76rem;
+                  transform: translate(0,-50%);
+                  background:url("../../assets/i/tips.png") no-repeat center center;
+                  background-size: contain;
+                }
+                margin-bottom: 0.54rem;
+           }
+       }
+       .mainInfo_default,.meet_people_default{
+          margin:2.16rem auto;
+          width: 4.03rem;
+          height: 2.91rem;
+          background:url("../../assets/i/default.png") no-repeat center center;
+          background-size: 100% 100%;
+          margin-bottom: 0;
+          position: relative;
+          &:after{
+            content: "暂时没有数据！";
+            position: absolute;
+            left: 50%;
+            top: 110%;
+            color: #b6b9bf;
+            font-size: 0.24rem;
+            transform:translate(-50%,0);
+          }
+       }
+       .meet_people_default{
+          margin:0.5rem auto;
+          &:after{
+            
+          }
+       }
+       .meet_people{
+           width: 100%;
+         .meet_people_title{
+              margin-top: 0.12rem;
+              font-size: 0.28rem;
+              height: 0.66rem;
+              text-align: left;
+              line-height: 0.66rem;
+              color: #2f3a47;
+              margin-bottom: -0.08rem;
+             }
+               .people_list{
+                display: flex;
+                flex-wrap:wrap;
+                // max-height:3.16rem;
+                width: 13.2rem;
+                // overflow: scroll;
+                .people{
+                    margin-bottom: 0.3rem;
+                   .people_logo{
+                    position: relative;
+                    width: 0.64rem;
+                    height: 0.64rem;
+                    border-radius: 50%;
+                    background:  #2f3a47;
+                    margin: 0.2rem 0.57rem;
+                    background: url("../../assets/i/head-demo.png") no-repeat center center;
+                    background-size: contain;
+                    &:after{
+                      content: "";
+                      width: 0.26rem;
+                      height: 0.26rem;
+                      border-radius: 50%;
+                      background:  #fff;
+                      position: absolute;
+                      right: -0.06rem;
+                      top: -0.06rem;
+                      // border:0.13rem solid red;
+                      background: url("../../assets/i/noSign.png") no-repeat center center;
+                      background-size: contain;
+                    }
+                   }
+                   .people_name{
+                    font-size: 0.24rem;
+                    color: #2f3a47;
+                   }
+                }
+                .people:nth-child(1),.people:nth-child(8n+1){
+                  margin-left: -0.49rem;
+                   margin-bottom: 0.3rem;
+                   .people_logo{
+                    position: relative;
+                    width: 0.64rem;
+                    height: 0.64rem;
+                    border-radius: 50%;
+                    // background:  #2f3a47;
+                    margin: 0.2rem 0.55rem;
+                    &:after{
+                    }
+                   }
+                   .people_name{
+                   }
+                }
+                .people:nth-child(8n){
+                  margin-left: 0.55rem;
+                   .people_logo{
+                    position: relative;
+                    width: 0.64rem;
+                    height: 0.64rem;
+                    border-radius: 50%;
+                    // background:  #2f3a47;
+                    margin: 0.2rem 0;
+                    &:after{
+                    }
+                   }
+                }
+               
+             }
+       }
+           .meet_temporary{
+             width: 100%;
+                 .meet_temporary_title{
+                        margin-top: 0.13rem;
+                        font-size: 0.26rem;
+                        height: 0.66rem;
+                        text-align: left;
+                        line-height: 0.66rem;
+                         color: #2f3a47;
+                         margin-bottom: -0.08rem;
+                       }
+                           .people_list{
+                               display: flex;
+                               flex-wrap:wrap;
+                               // max-height:3.16rem;
+                               width: 13.2rem;
+                               // overflow: scroll;
+                               .people{
+                                  margin-bottom: 0.3rem;
+                                 .people_logo{
+                                  position: relative;
+                                  width: 0.64rem;
+                                  height: 0.64rem;
+                                  border-radius: 50%;
+                                  background:  #2f3a47;
+                                  margin: 0.2rem 0.57rem;
+                                  background: url("../../assets/i/head-demo.png") no-repeat center center;
+                                  background-size: contain;
+                                  &:after{
+                                    content: "";
+                                    width: 0.26rem;
+                                    height: 0.26rem;
+                                    border-radius: 50%;
+                                    background:  #fff;
+                                    position: absolute;
+                                    right: -0.06rem;
+                                    top: -0.06rem;
+                                    // border:0.13rem solid red;
+                                    background: url("../../assets/i/noSign.png") no-repeat center center;
+                                    background-size: contain;
+                                  }
+                                 }
+                                 .people_name{
+                                  font-size: 0.24rem;
+                                  color: #8e979d;
+                                 }
+                          }
+                          .people:nth-child(1),.people:nth-child(8n+1){
+                            margin-left: -0.49rem;
+                             margin-bottom: 0.3rem;
+                             .people_logo{
+                              position: relative;
+                              width: 0.64rem;
+                              height: 0.64rem;
+                              border-radius: 50%;
+                              background:  #2f3a47;
+                              margin: 0.2rem 0.55rem;
+                              background: url("../../assets/i/head-demo.png") no-repeat center center;
+                              background-size: contain;
+                              &:after{
+                               content: "";
+                                width: 0.26rem;
+                                height: 0.26rem;
+                                border-radius: 50%;
+                                background:  #fff;
+                                position: absolute;
+                                right: -0.06rem;
+                                top: -0.06rem;
+                                // border:0.13rem solid red;
+                                background: url("../../assets/i/noSign.png") no-repeat center center;
+                                background-size: contain;
+                              }
+                             }
+                             .people_name{
+                              font-size: 0.24rem;
+                              color: #8e979d;
+                             }
+                          }
+                          .people:nth-child(8n){
+                              margin-left: 0.55rem;
+                               .people_logo{
+                                position: relative;
+                                width: 0.64rem;
+                                height: 0.64rem;
+                                border-radius: 50%;
+                                // background:  #2f3a47;
+                                margin: 0.2rem 0;
+                                &:after{
+                                }
+                               }
+                }
+                      }
+           }
+     }
+  }
+}
+
+//打开二维码
+.seeBigPic{
+     width: 100%;
+      height:100%;
+      background: rgba(0,0,0,0.6);
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+    .scanCode{
+      width: 9.2rem;
+      height: 8.16rem;
+      margin:0.88rem auto;
+      // background:url("../../assets/i/QRCode.png") no-repeat center center;
+      // background-size: contain;
+      margin-bottom: 0;
+      position: relative;
+      background: #fff;
+      img{
+        width: 4.8rem;
+        height: 4.8rem;
+        position: absolute;
+        left:50%;
+        top: 0.78rem;
+        transform:translate(-50%,-0%);
+      }
+      .textT{
+        position: absolute;
+        left:50%;
+        top: 5.98rem;
+        transform:translate(-50%,-0%);
+        font-size: 0.72rem;
+        color: #1c242d;
+        height: 0.72rem;
+        line-height: 0.72rem;
+        width: 100%;
+      }
+      .timeT{
+        position: absolute;
+        left:50%;
+        top: 6.94rem;
+        transform:translate(-50%,-0%);
+        font-size: 0.59rem;
+        color: #8e979d;
+        height: 0.59rem;
+        line-height: 0.59rem;
+        width: 100%;
+      }
+      .myAfter{
+        // content: "";
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // transform:translate(-50%,0);
+        background:url("../../assets/i/closeScacCode.png") no-repeat center center;
+        background-size: contain;
+      }
+    }
+}
+
+// 身份验证
+.user_identity{
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    .input_box{
+      width: 9.2rem;
+      height: 5.76rem;
+      background: #fff;
+      top: 1.58rem;
+      position: fixed;
+      left: 50%;
+      transform:translate(-50%,0);
+      z-index: 9991;
+      .close{
+          width: 1rem;
+          height: 1rem;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background:url("../../assets/i/closeScacCode.png") no-repeat center center;
+          background-size: contain;
+      }
+      .confirm{
+        color: #2f3a47;
+        font-size: 0.36rem;
+        height: 1.12rem;
+        line-height: 1.12rem;
+        margin-bottom: 0.36rem;
+      }
+      .form_inp{
+        width: 100%;
+        overflow: hidden;
+        padding-left: 0.66rem;
+        box-sizing: border-box;
+      }
+      .thisUsername,.thisPassword{
+        margin: 0 auto;
+        width: 6.26rem;
+        height: 0.86rem;
+        border:1px solid #e0e0e0;
+        border-radius: 0.05rem;
+        margin-bottom: 0.28rem;
+        display: flex;
+        position: relative;
+        input{
+          padding-left: 0.24rem;
+          box-sizing: border-box;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border:none;
+          font-size: 0.24rem;
+          color: #4b5460;
+          line-height: 0.86rem;
+        }
+        .icon_user{
+          position: absolute;
+          top: 50%;
+          left: -0.7rem;
+          transform:translate(0,-50%);
+          width: 0.38rem;
+          height: 0.4rem;
+          background:url("../../assets/i/username.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .thisPassword{
+         margin-bottom: 0.67rem;
+        input{
+          
+        }
+         .icon_user{
+          background:url("../../assets/i/password.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .btn{
+          margin: 0 auto;
+          width: 6.28rem;
+          height: 0.88rem;
+          font-size: 0.36rem;
+          color: #fff;
+          background:#499ff5;
+          line-height: 0.88rem;
+          border-radius: 0.05rem;
+      }
+    }
+}

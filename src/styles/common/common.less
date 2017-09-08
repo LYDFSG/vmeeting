@@ -1,0 +1,82 @@
+html {
+  background-color: #f5f5f5;
+}
+.mt32 {margin-top: .26rem}
+.md26 {margin-bottom: .26rem}
+
+// .me,.taoke {
+//   transition: transform .3s;
+//   -webkit-transition: transform .3s;
+//   transform: translate3d(0, 0, 0);
+//   -webkit-transform: translate3d(0, 0, 0);
+//   background-color: #f0f0f0;
+// }
+
+// .lexue-enter-active, .lexue-leave-active {
+//     width: 7.5rem;
+//   position: absolute; top: 0;
+//   transform: translate3d(0, 0, 0);
+//   -webkit-transform: translate3d(0, 0, 0);
+// }
+// .lexue-enter, .lexue-leave-active {
+//     width: 7.5rem;
+//   position: absolute; top: 0;  left: 0;
+//   transform: translate3d(7.5rem, 0, 0);
+//   -webkit-transform: translate3d(7.5rem, 0, 0);
+// }
+.lexue-enter-active, .lexue-leave-active {
+  width: 7.5rem;
+  position: absolute; top: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.lexue-enter, .lexue-leave-active {
+  width: 7.5rem;
+  position: absolute; top: 0; left: 0;
+  transform: translate3d(7.5rem, 0, 0);
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: #f5f5f5;
+  overflow-y: scroll;
+}
+.lexue-doc {
+  width:100%; height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.lazyImgBg[lazy=loading]{
+  background-image: url(../../assets/i/loading.gif) !important;
+  background-size: .5rem .5rem !important;
+}
+.lazyImgBg[lazy=error]{
+  background-color: #e0e0e0 !important;
+}
+.lazyImgBg[lazy=loaded] {
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+}
+.fadeIn {
+  display: block;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-animation: fadeIn 0.2s forwards;
+          animation: fadeIn 0.2s forwards;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.heightAuto {
+  height: auto;
+  overflow: hidden;
+}

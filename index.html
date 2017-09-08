@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+	  <meta content="yes" name="apple-mobile-web-app-capable">
+	  <meta content="yes" name="apple-touch-fullscreen">
+	  <meta content="telephone=no,email=no" name="format-detection">
+	  <meta name="Copyright" content="万科科技公司">
+	  <title>会议展板</title>
+    <script src="./static/lib/js/appcan.js"></script>
+    <script src="./static/lib/js/appcan.control.js"></script>
+    <script src="./static/lib/js/online.js"></script>
+    <script src="http://leaverou.github.com/prefixfree/prefixfree.min.js"></script>
+  </head>
+    <link rel="shortcut icon" href="./static/i/favicon.png" type="image/x-icon">
+    <body id="body">
+    <div id="app"></div>
+    <script src="./static/js/global.js"></script>
+    <script>
+        //监听当前网络是否连接
+        var whetherOnline = onlinenetwork({
+          "time":1000,
+          "url":""
+        })
+
+        whetherOnline.onLineHandler(function(){
+          console.log("连上了！")
+        })
+
+        whetherOnline.offLineHandler(function(){
+          console.log("断开网络！")
+        })
+        
+        // if(window.navigator.onLine){
+        //   alert("在线");
+        // }else{
+        //   alert("下线");
+        // }
+        //ajax轮询
+        setInterval(function(){
+            //Ajax...
+        },1000)
+    	  //判断移动端设备类型
+	      var ua = navigator.userAgent;
+	      var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1;
+	      if(isAndroid) {
+	        document.getElementById("body").setAttribute('class','android');
+	        CLIENTOSTYPE = 'android'
+	      }else {
+	        document.getElementById("body").setAttribute('class','ios');
+	        CLIENTOSTYPE = 'ios'
+	      }
+       //捕捉HOME键
+       $(document).keydown(function (event) {
+          if (event.keyCode == 36) {
+          // alert("HOME 禁止")
+          return;
+          }
+        })
+	      
+        appcan.ready(function() {
+
+        // 禁用返回页
+        uexWindow.setReportKey(0,1);
+
+        // 捕捉物理返回键
+        uexWindow.onKeyPressed =function(keyCode){
+          if(keyCode==1){
+               // alert("我按了菜单键")
+               // alert(window.location.href)
+          }else if(keyCode==0){
+            // alert("我按了返回键")
+            // alert(window.location.href)
+          }
+            var hasOpen= localStorage.getItem("hasOpen");
+            // 清楚 timeID
+            var clearTime= localStorage.getItem("clearTime");
+
+            if(clearTime!=""||clearTime!=null){
+              window.clearInterval(clearTime);
+            }
+
+            if(hasOpen=="1"){
+              console.log("物理返回键 -> 是否打开播放器 : ",hasOpen);
+              uexVideo.closePlayer(); // 关闭 播放器
+              uexPDFReader.close(); // 关闭 pdf
+              localStorage.setItem('hasOpen',"0");
+            }else {
+              var _history = JSON.parse(sessionStorage.getItem("_history"));
+              _history.pop();
+              var _forWard = _history[_history.length-1];
+              console.log("物理返回键 -> _forWard : ",_forWard)
+              if(_forWard==""||_forWard==undefined||_forWard==null){
+                 console.log("------------ 退出app ------------ ");
+                 uexWidgetOne.exit();
+               }else{
+                  sessionStorage.setItem("_history", JSON.stringify(_history));
+                  window.location.hash = _forWard;
+               }
+            }
+          }
+      });
+    </script>
+    <!-- built files will be auto injected -->
+    <script src="./static/lib/js/vconsole.min.js"></script>
+  </body>
+</html>
